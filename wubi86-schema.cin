@@ -1,0 +1,53 @@
+# (c) Apple Inc.2022
+# 示例插件输入法规则文件。
+# # 字符用于表示批注。
+# 文件格式必须为纯文本。文件编码必须是 Unicode (UTF-16)，初始 BOM（字节顺序标记）为可选。
+# 文件由多个标记组成，大写带冒号，后加标记的内容。
+#
+# METHOD（输入法）：这是文件中的第一个条目，定义用于实现插件的输入法。
+# 当前支持的输入法只有“TABLE”。
+#
+METHOD:TABLE
+#
+# ENCODE（编码）：这表示目标输入法是繁体中文（“TC”）、简体中文（“SC”）或 Unicode（“Unicode”）。在“键盘”设置中，所有插件输入法都显示为 Unicode 输入法。
+#
+ENCODE:SC
+#
+# PROMPT（提示符）：这是插件的名称，显示在“键盘”设置的输入法列表以及输入法菜单中。
+#
+PROMPT:WUBI86
+#
+# DELIMITER（分隔符）：这使用相同的输入码来定义字符或短语的分隔符。
+# 在这种情况下，我们使用逗号字符。
+#
+DELIMITER:,
+#
+# VERSION（版本）：这用于表示插件的版本号。
+#
+VERSION:1.0
+#
+# MAXINPUTCODE（最多的输入码）：一次转换中可以输入的最多的字符个数。
+# 除非你指定一个，否则没有限制。
+#
+MAXINPUTCODE:4
+#
+# VALIDINPUTKEY（有效的输入键值）：可用于输入字符串的字符集。它们是不区分大小写的，但是必须输入为一个完整的集。
+#
+VALIDINPUTKEY:0123456789-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+#
+# BEGINCHARACTER（起始字符）：这个标记开始映射的定义，并且是必需的。
+# 每个映射的格式如下：
+# ...
+# 空白的行和字符会被忽略。
+# 输出字符串之间的分隔符就是上述由 DELIMITER 标记所定义的。
+# 表示映射定义以 ENDCHARACTER 标记结尾。
+#
+BEGINCHARACTER
+aardvark 土豚
+abacus 算盤
+abalone 鮑魚,鰒魚
+apple 蘋果
+#
+# ENDCHARACTER（结尾字符）：这用于终止映射定义，是文件中的最后一个字符。
+#
+ENDCHARACTER
